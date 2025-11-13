@@ -30,9 +30,10 @@ export default function Login() {
                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required />
                     <label>Password</label>
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" required />
+                    <br></br>
                     <button className="btn-primary" type="submit">Login</button>
                 </form>
-                <p>Don't have an account? <Link to="/register">Register</Link></p>
+                <p>Don't have an account <Link to="/register">Register</Link></p>
             </div>
             <Toast message={toast?.message} type={toast?.type} onClose={() => setToast(null)} />
         </div>

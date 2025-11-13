@@ -33,9 +33,10 @@ export default function Register() {
                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required />
                     <label>Password</label>
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" required />
+                    <br></br>
                     <button className="btn-primary" type="submit">Register</button>
                 </form>
-                <p>Already have an account? <Link to="/login">Login</Link></p>
+                <p>Already have an account <Link to="/login">Login</Link></p>
             </div>
             <Toast message={toast?.message} type={toast?.type} onClose={() => setToast(null)} />
         </div>
