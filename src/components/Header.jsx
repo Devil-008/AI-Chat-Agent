@@ -16,15 +16,26 @@ export default function Header({ sidebarOpen, onToggleSidebar }) {
                 onClick={onToggleSidebar}
             >
                 {sidebarOpen ? (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <path d="M6 6l12 12M6 18L18 6" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+                    // Google "close" icon (Material Design)
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                        <path
+                            fill="#fff"
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 
+                   5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12Z"
+                        />
                     </svg>
                 ) : (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                        <path d="M3 6h18M3 12h14M3 18h10" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+                    // Google "menu" icon (Material Design)
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                        <path
+                            fill="#fff"
+                            d="M3 6h18v2H3Zm0 5h18v2H3Zm0 5h18v2H3Z"
+                        />
                     </svg>
                 )}
+
             </button>
+
             <div className="brand">AI chat Agent</div>
             <div className="header-right">
                 {user ? (

@@ -19,8 +19,6 @@ body {
   color: #07120a;
 }
 
-/* Scrollbar styling (primary gradient) */
-/* Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--primary) rgba(60, 179, 113, 0.08);
@@ -110,7 +108,6 @@ body {
   width: 100%;
   margin-top: 12px;
 }
-
 .app-header {
   height: 64px;
   background: linear-gradient(90deg, var(--primary), var(--primary-dark));
@@ -120,7 +117,7 @@ body {
   padding: 0 20px;
   color: #fff;
 }
-.sidebar-toggle {
+/* .sidebar-toggle {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.25);
   width: 42px;
@@ -131,7 +128,17 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin-right: 14px;
+} */
+
+.sidebar-toggle svg path {
+  fill: var(--primary-text);
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
 }
+
 .sidebar-toggle:hover {
   background: rgba(255, 255, 255, 0.12);
 }
@@ -183,7 +190,6 @@ body {
   color: #fff;
   cursor: pointer;
 }
-
 .app-body {
   display: flex;
   height: calc(100vh - 64px);
@@ -307,24 +313,6 @@ body {
   border: 1px solid rgba(60, 179, 113, 0.06);
 }
 
-.spinner {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 3px solid rgba(60, 179, 113, 0.2);
-  border-top-color: var(--primary);
-  animation: spin 1s linear infinite;
-}
-.loader-text {
-  color: var(--primary-dark);
-  font-size: 12px;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .toast {
   position: fixed;
   right: 18px;
@@ -338,7 +326,6 @@ body {
   background: linear-gradient(90deg, var(--primary), var(--primary-dark));
 }
 .toast-error {
-  /* use a strong primary for error visuals per request (no other color) */
   background: linear-gradient(
     90deg,
     var(--primary-dark),
