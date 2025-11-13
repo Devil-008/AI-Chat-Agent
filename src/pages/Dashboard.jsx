@@ -16,7 +16,7 @@ export default function Dashboard() {
                 <Sidebar visible={sidebarOpen} />
                 <main className="app-main">
                     <section className="panel">
-                        <h3>Chat</h3>
+                        <h3>Chat Board</h3>
                         <Chat />
                     </section>
                 </main>

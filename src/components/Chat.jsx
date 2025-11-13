@@ -73,7 +73,10 @@ export default function Chat() {
                     placeholder={waiting ? 'Waiting for reply…' : 'Type a message...'}
                     disabled={waiting}
                 />
-                <button onClick={send} className="btn-primary" disabled={waiting}>{waiting ? '...' : 'Send'}</button>
+                <button onClick={send} className="btn-primary" disabled={waiting}>
+                    {waiting ? '...' : 'Send'} <span className="material-icons" style={{fontSize:'18px',verticalAlign:'middle'}}>send</span>
+                </button>
+               
             </div>
         </div>
     )

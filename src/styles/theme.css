@@ -117,7 +117,7 @@ body {
   padding: 0 20px;
   color: #fff;
 }
-/* .sidebar-toggle {
+.sidebar-toggle {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.25);
   width: 42px;
@@ -128,20 +128,8 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin-right: 14px;
-} */
-
-.sidebar-toggle svg path {
-  fill: var(--primary-text);
-  width: 42px;
-  height: 42px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
 }
 
-.sidebar-toggle:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
 .brand {
   font-weight: 700;
 }
@@ -250,11 +238,12 @@ body {
   overflow: auto;
 }
 .panel {
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.98),
     var(--card-bg)
-  );
+  ); */
+  background: whitesmoke;
   padding: 18px;
   border-radius: 12px;
   box-shadow: 0 8px 22px rgba(46, 139, 87, 0.04);
@@ -287,8 +276,8 @@ body {
   word-wrap: break-word; /* wraps long text */
 }
 .msg.me {
-  background: var(--primary);
-  color: #fff;
+  background: rgba(60, 179, 113, 0.04);
+  color: var(--primary-dark);
   margin-left: auto;
   display: block; /* makes consistent width */
   width: fit-content; /* bubble expands properly */
@@ -305,12 +294,25 @@ body {
   display: flex;
   gap: 8px;
   margin-top: 12px;
+  margin-bottom: 12px;
 }
 .chat-input input {
   flex: 1;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(60, 179, 113, 0.06);
+  border: 1px solid var(--primary-dark);
+  background: rgba(60, 179, 113, 0.06);
+  color: var(--primary-dark);
+}
+.chat-input input::placeholder {
+  color: rgba(46, 139, 87, 0.55);
+}
+.chat-input input:hover,
+.chat-input input:focus,
+.chat-input input:active {
+  border-color: var(--primary-dark);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(46, 139, 87, 0.25);
 }
 
 .toast {
