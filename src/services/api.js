@@ -1,5 +1,5 @@
 const BASE = "http://127.0.0.1:5000/api/auth";
-const CHAT_URL = "http://127.0.0.1:8080/api/chat";
+const CHAT_URL = "http://127.0.0.1:5000/chat";
 
 async function request(path, body) {
   const res = await fetch(`${BASE}/${path}`, {
@@ -42,9 +42,11 @@ export async function chat(message) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message }),
   });
-  const json = await res.json().catch(() => ({ reply: "" }));
-  if (!res.ok) throw json;
-  return json;
+  const json = await res
+    .json()
+    .catch(() => ({ data: { reply: "" }, message: "Invalid JSON response" }));
+  if (!res.ok || json?.isSuccess === false) throw json;
+  return json?.data ?? { reply: "" };
 }
 
 export default { login, register, logout, chat };
